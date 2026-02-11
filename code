@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ANALISIS_DE_ALGORITMOS
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] datos;
+            int op = 0;
+            long tamanhio = 0;
+            do
+            {
+                System.Console.WriteLine("\t\t\tMenu de tecnicas de busqueda y ordenamiento");
+                System.Console.WriteLine("\t1.Seleccionar tamaño del vector");
+                System.Console.WriteLine("\t2.Llenar vector");
+                System.Console.WriteLine("\t3.Busqueda lineal");
+                System.Console.WriteLine("\t4.Busqueda binaria");
+                System.Console.WriteLine("\t12.Salir del programa");
+                System.Console.WriteLine("Seleccione su opcion:");
+                op = int.Parse(System.Console.ReadLine());
+                switch (op)
+                {
+                    case 1:System.Console.Clear();
+                        do
+                        {
+                            System.Console.Write("Por favor seleccione el tamaño de los datos");
+                            tamanhio = long.Parse(System.Console.ReadLine());
+                        }while (tamanhio < 100000 && tamanhio > 10000000);
+                        break;
+
+                    case 2:System.Console.Clear();
+                        datos = new int [tamanhio];
+                        llenardatos(datos);
+                        System.Console.Write("Vector diligenciado con");
+                        break;
+
+                    case 3:System.Console.Clear();
+                        break;
+
+                    case 12 : System.Console.Clear();
+                        System.Console.WriteLine("Gracias por utilizar este programa");
+                        break ;
+                     
+                    default:
+                        System.Console.Clear();
+                        System.Console.WriteLine("Opcion invalida \nPor favor intentelo de nuevo");
+                        break;
+                }
+            } while (op != 12);
+
+        }
+    }
+}
